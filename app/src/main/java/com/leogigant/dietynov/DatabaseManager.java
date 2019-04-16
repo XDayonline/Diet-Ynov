@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -99,9 +100,12 @@ public class DatabaseManager extends SQLiteOpenHelper {
     }
 
     public void createAccount(int size, Date date, float startWeight, String gender){
+        android.text.format.DateFormat dateFormat = new android.text.format.DateFormat();
+        String dateFound = dateFormat.format("dd/MM/yyyy", date).toString();
+
         String strSql = "insert into my_account("
                 + "birth_date, size, start_weight, gender) values ('"
-                + date + "', " + size + ", " + startWeight + ", '" + gender + "')";
+                + dateFound + "', " + size + ", " + startWeight + ", '" + gender + "')";
         this.getWritableDatabase().execSQL(strSql);
         Log.i("DATABASE", "createAccount invoked");
     }
@@ -115,8 +119,12 @@ public class DatabaseManager extends SQLiteOpenHelper {
     }
 
     public void addWeight(Float value){
+        Date date = new Date();
+        android.text.format.DateFormat dateFormat = new android.text.format.DateFormat();
+        String dateFound = dateFormat.format("dd/MM/yyyy", date).toString();
+
         String strSql = "insert into weight("
-                + "date_de_mesure, value) values ('" + new Date() + "', " + value + ");";
+                + "date_de_mesure, value) values ('" + dateFound + "', " + value + ");";
         this.getWritableDatabase().execSQL(strSql);
         Log.i("DATABASE", "addWeight invoked");
     }

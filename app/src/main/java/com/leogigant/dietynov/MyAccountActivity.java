@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.RadioButton;
 
 public class MyAccountActivity extends AppCompatActivity {
     private DatabaseManager databaseManager;
@@ -21,15 +22,27 @@ public class MyAccountActivity extends AppCompatActivity {
         EditText birthView = (EditText) this.findViewById(R.id.parameter_birth_v);
         EditText weightView = (EditText) this.findViewById(R.id.parameter_weigth_v);
 
-        String birth = cursor.getString(1);
+        String date = cursor.getString(1);
         String size = cursor.getString(2);
         String weight = cursor.getString(3);
+        String gender = cursor.getString(4);
 
-        Log.i("DATA","" + birth);
+        RadioButton buttonH = findViewById(R.id.my_account_h);
+        RadioButton buttonF = findViewById(R.id.my_account_f);
+
+        if(gender.equals("H")){
+            buttonF.setChecked(false);
+            buttonH.setChecked(true);
+        }else{
+            buttonF.setChecked(true);
+            buttonH.setChecked(false);
+        }
+
+        Log.i("DATA","" + date);
         Log.i("DATA","" + size);
         Log.i("DATA","" + weight);
 
-        birthView.setText(birth);
+        birthView.setText(date);
         sizeView.setText(size);
         weightView.setText(weight);
     }

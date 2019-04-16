@@ -95,13 +95,13 @@
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:id="@+id/radioButton4"
+                    android:id="@+id/my_account_f"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="F" />
 
                 <RadioButton
-                    android:id="@+id/radioButton3"
+                    android:id="@+id/my_account_h"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="H" />
