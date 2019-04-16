@@ -17,4 +17,5 @@
     <string name="account_gender">Sexe</string>
     <string name="account_submit">Enregistrer</string>
     <string name="title_activity_my_weight">MyWeightActivity</string>
+    <string name="add_new_weight">AJOUTEZ NOUVEAU :</string>
 </resources>

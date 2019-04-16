@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class DatabaseManager extends SQLiteOpenHelper {
@@ -72,9 +73,14 @@ public class DatabaseManager extends SQLiteOpenHelper {
                 + " start_weight REAL NOT NULL,"
                 + " gender TEXT NOT NULL"
                 + ");";
+        String strSql2 = "create table weight ("
+                + " id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"
+                + " date_de_mesure TEXT NOT NULL,"
+                + " value REAL NOT NULL"
+                + ");";
         try{
-            Log.i("DATABASE", " " + strSql);
             db.execSQL(strSql);
+            db.execSQL(strSql2);
             Log.i("DATABASE", "onCreate invoked");
         }catch (SQLiteException e){
             e.printStackTrace();
@@ -106,5 +112,27 @@ public class DatabaseManager extends SQLiteOpenHelper {
         cursor.moveToFirst();
 
         return cursor;
+    }
+
+    public void addWeight(Float value){
+        String strSql = "insert into weight("
+                + "date_de_mesure, value) values ('" + new Date() + "', " + value + ");";
+        this.getWritableDatabase().execSQL(strSql);
+        Log.i("DATABASE", "addWeight invoked");
+    }
+
+    public ArrayList<Weight> getWeight(){
+        ArrayList<Weight> weightArray = new ArrayList<Weight>();
+        String strSql = "select * from weight order by id desc";
+        Cursor cursor = this.getReadableDatabase().rawQuery(strSql, null);
+        cursor.moveToFirst();
+
+        while (! cursor.isAfterLast()){
+            Weight myWeight = new Weight(cursor.getString(1), cursor.getFloat(2));
+            weightArray.add(myWeight);
+            cursor.moveToNext();
+        }
+
+        return weightArray;
     }
 }
