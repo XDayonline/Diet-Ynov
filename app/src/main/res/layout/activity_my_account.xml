@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background3"
     android:orientation="vertical"
-    tools:context=".MyAccountActivity" >
+    tools:context=".MyAccountActivity">
 
     <TextView
         android:id="@+id/textView7"
@@ -17,97 +18,108 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:baselineAligned="false">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_weight="1"
+        android:background="#F0F0F0"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/parameter_size_t"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center_vertical"
+            android:text="@string/account_size"
+            android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/parameter_size_t"
-                android:layout_width="match_parent"
-                android:layout_height="44sp"
-                android:gravity="center_vertical"
-                android:text="@string/account_size"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/parameter_birth_t"
-                android:layout_width="match_parent"
-                android:layout_height="44sp"
-                android:gravity="center_vertical"
-                android:text="@string/account_birth"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/parameter_weigth_t"
-                android:layout_width="match_parent"
-                android:layout_height="44sp"
-                android:gravity="center_vertical"
-                android:text="@string/account_start_weight"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/parameter_gender_t"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/account_gender"
-                android:textSize="24sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
+        <EditText
+            android:id="@+id/parameter_size_v"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:ems="10"
+            android:inputType="textPersonName" />
 
-            <EditText
-                android:id="@+id/parameter_size_v"
-                android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/parameter_birth_t"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center_vertical"
+            android:text="@string/account_birth"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/parameter_birth_v"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="25dp"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/parameter_weigth_t"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:gravity="center_vertical"
+            android:text="@string/account_start_weight"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/parameter_weigth_v"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="25dp"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/parameter_gender_t"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:text="@string/account_gender"
+            android:textSize="18sp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="25dp">
+
+            <RadioButton
+                android:id="@+id/my_account_f"
+                android:layout_width="62dp"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:text="F" />
 
-            <EditText
-                android:id="@+id/parameter_birth_v"
-                android:layout_width="match_parent"
+            <RadioButton
+                android:id="@+id/my_account_h"
+                android:layout_width="62dp"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:text="H" />
+        </RadioGroup>
 
-            <EditText
-                android:id="@+id/parameter_weigth_v"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:id="@+id/my_account_f"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="F" />
-
-                <RadioButton
-                    android:id="@+id/my_account_h"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="H" />
-            </RadioGroup>
-        </LinearLayout>
-
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:background="@color/colorPrimary"
+            android:text="Enregistrer" />
     </LinearLayout>
 
 </LinearLayout>

@@ -18,4 +18,13 @@
     <string name="account_submit">Enregistrer</string>
     <string name="title_activity_my_weight">MyWeightActivity</string>
     <string name="add_new_weight">AJOUTEZ NOUVEAU :</string>
+    <string name="size">Taille</string>
+    <string name="thigh">Cuisse</string>
+    <string name="hip">Hanche</string>
+    <string name="arms">Bras</string>
+    <string name="title_activity_measures">MeasuresActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>

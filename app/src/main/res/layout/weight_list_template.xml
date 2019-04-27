@@ -10,16 +10,22 @@
 
         <TextView
             android:id="@+id/weight_date_v"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="18sp" />
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="26/04/2019"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/weight_value_v"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="18sp" />
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="56"
+            android:textSize="24sp" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

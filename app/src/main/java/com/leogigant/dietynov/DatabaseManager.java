@@ -79,9 +79,42 @@ public class DatabaseManager extends SQLiteOpenHelper {
                 + " date_de_mesure TEXT NOT NULL,"
                 + " value REAL NOT NULL"
                 + ");";
+        String strSql3 = " create table recette ("
+                + " id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"
+                + " title TEXT NOT NULL,"
+                + " portions INTEGER NOT NULL,"
+                + " picture_url TEXT NOT NULL,"
+                + " time_total INTEGER NOT NULL,"
+                + " time_prep INTEGER NOT NULL,"
+                + " time_backing INTEGER NOT NULL"
+                + ");";
+        String strSql4 = " create table ingredients ("
+                + " id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"
+                + " recette_id INTEGER NOT NULL,"
+                + " name TEXT NOT NULL,"
+                + " unit TEXT,"
+                + " quantity INTEGER NOT NULL,"
+                + " FOREIGN KEY(recette_id) REFERENCES recette(id)"
+                + ");";
+        String strSql5 = " create table nutritions ("
+                + " id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"
+                + " recette_id INTEGER NOT NULL,"
+                + " kcal REAL,"
+                + " protein REAL,"
+                + " fat REAL,"
+                + " carbohydrate REAL,"
+                + " sugar REAL,"
+                + " sat_fat REAL,"
+                + " fiber REAL,"
+                + " sodium REAL,"
+                + " FOREIGN KEY(recette_id) REFERENCES recette(id) "
+                + ");";
         try{
             db.execSQL(strSql);
             db.execSQL(strSql2);
+            db.execSQL(strSql3);
+            db.execSQL(strSql4);
+            db.execSQL(strSql5);
             Log.i("DATABASE", "onCreate invoked");
         }catch (SQLiteException e){
             e.printStackTrace();

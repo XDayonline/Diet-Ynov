@@ -126,4 +126,14 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this, MyWeightActivity.class);
         startActivity(intent);
     }
+
+    public void myRecipe(View view) {
+        Intent intent = new Intent(this, MyRecipeActivity.class);
+        startActivity(intent);
+    }
+
+    public void myMeasures(View view) {
+        Intent intent = new Intent(this, MeasuresActivity.class);
+        startActivity(intent);
+    }
 }
